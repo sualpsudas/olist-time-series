@@ -179,14 +179,16 @@ olist-time-series/
 git clone https://github.com/sualpsudas/olist-time-series.git
 cd olist-time-series
 
-# 2. Activate the ai conda environment
-conda activate ai
+# 2. Create and activate conda environment
+conda create -n ts-env python=3.11 -y
+conda activate ts-env
 
 # 3. Install dependencies
-pip install statsmodels prophet torch scikit-learn gensim
+pip install -r requirements.txt
 
 # 4. Make sure Olist data is available at:
 #    ../olist-statistics-science/data/
+#    (clone olist-statistics-science repo as a sibling folder)
 
 # 5. Run notebooks in order
 jupyter notebook notebooks/01_eda_arima.ipynb
